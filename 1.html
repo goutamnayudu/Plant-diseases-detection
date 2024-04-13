@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertilizer Recommendation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url("fert.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container {
+            text-align: center;
+        }
+        .box {
+            width: 200px;
+            height: 50px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+        }
+        h1 {
+            color: red;
+            font-size: 4rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .fertilizer-names {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Fertilizer Recommendation</h1>
+    <form id="fertilizerForm" action="info.html" method="post">
+        <div class="flex-container">
+            <div class="fertilizer-names">
+                <div class="box" onclick="submitForm('NPK')">NPK</div>
+                <div class="box" onclick="submitForm('Urea')">Urea</div>
+                <div class="box" onclick="submitForm('Ammonium Nitrate')">Ammonium Nitrate</div>
+                <div class="box" onclick="submitForm('Potassium Chloride')">Potassium Chloride</div>
+                <div class="box" onclick="submitForm('Diammonium Phosphate')">Diammonium Phosphate</div>
+                <!-- Add more fertilizer names here -->
+            </div>
+        </div>
+        <input type="hidden" name="fertilizerName" id="fertilizerName">
+    </form>
+</div>
+
+<script>
+    function submitForm(name) {
+        document.getElementById('fertilizerName').value = name;
+        document.getElementById('fertilizerForm').submit();
+    }
+</script>
+</body>
+</html>
