@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 600px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        input[type="submit"],
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button {
+            background-color: #008CBA;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Crop Disease Prediction</h1>
+
+    <form action="black.html" method="post">
+        <label for="disease">Select a Plant Disease:</label><br>
+        <select id="disease" name="disease">
+            <option value="" disabled selected>Enter the plant disease</option>
+            <option value="disease1">Black Rot</option>
+            <option value="disease2">Early blight</option>
+            <option value="disease3">Bacterial spot</option>
+            <option value="disease4">Bacterial wilt</option>
+            <option value="disease5">Crown gall</option>
+            <!-- Add more disease options here -->
+        </select><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <button id="scanButton" onclick="openPredictionApp()">Scan Image to Know Disease</button>
+</div>
+
+<script>
+    function openPredictionApp() {
+        window.open('http://localhost:8501', '_blank');
+    }
+</script>
+
+</body>
+</html>
